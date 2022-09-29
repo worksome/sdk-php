@@ -39,6 +39,7 @@ final class Client
         ]));
 
         $builder->addHeaderValue('Accept', 'application/json');
+        $builder->addHeaderValue('Content-Type', 'application/json');
     }
 
     public static function createWithHttpClient(ClientInterface $httpClient): self
