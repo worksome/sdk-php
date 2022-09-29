@@ -22,7 +22,7 @@
         "php-http/mock-client": "^1.5",
         "phpstan/phpstan": "^1.8.6",
         "symfony/var-dumper": "^5.4.11",
-        "worksome/coding-style": "^1.1"
+        "worksome/coding-style": "^2.0"
     },
     "autoload": {
         "psr-4": {
