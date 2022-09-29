@@ -46,8 +46,7 @@ $repositories = $client->graph()->query(<<<GQL
 **Authentication**
 
 ```php
-use Worksome\Sdk\Client;
-$client = new Client();
+$client = new \Worksome\Sdk\Client();
 $client->authenticate($apiToken);
 ```
 
