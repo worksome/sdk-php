@@ -16,6 +16,6 @@ return static function (ECSConfig $ecsConfig): void {
     WorksomeEcsConfig::setup($ecsConfig);
 
     $ecsConfig->skip(WorksomeEcsConfig::skips([
-        Worksome\WorksomeSniff\Sniffs\Classes\ExceptionSuffixSniff::class,
+        Worksome\CodingStyle\Sniffs\Classes\ExceptionSuffixSniff::class,
     ]));
 };
