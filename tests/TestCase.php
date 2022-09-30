@@ -24,7 +24,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $client = Client::createWithHttpClient($httpClient);
 
         return $this->getMockBuilder($this->apiClass)
-            ->onlyMethods(['get', 'post', 'postRaw', 'patch', 'delete', 'put', 'head', 'query'])
+            ->onlyMethods(['get', 'post', 'postRaw', 'patch', 'delete', 'put', 'head'])
             ->setConstructorArgs([$client])
             ->getMock();
     }

@@ -33,7 +33,7 @@ We are decoupled from any HTTP messaging client with help by [HTTPlug](https://h
 require_once __DIR__ . '/vendor/autoload.php';
 
 $client = new \Worksome\Sdk\Client();
-$repositories = $client->graph()->query(<<<GQL
+$repositories = $client->graph()->execute(<<<GQL
     query {
         profile {
             name

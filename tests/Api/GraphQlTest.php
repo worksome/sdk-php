@@ -28,10 +28,13 @@ GQL;
     $api = $this->getApiMock();
 
     $api->expects($this->once())
-        ->method('query')
-        ->with($query)
+        ->method('post')
+        ->with('/graphql', [
+            'query' => $query,
+            'variables' => [],
+        ])
         ->willReturn($response);
 
     /** @var GraphQL $api */
-    expect($api->query($query))->toBe($response);
+    expect($api->execute($query))->toBe($response);
 });
