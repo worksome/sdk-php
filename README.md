@@ -26,7 +26,7 @@ We are decoupled from any HTTP messaging client with help by [HTTPlug](https://h
 
 ## Usage
 
-**Basic usage**
+#### Basic usage
 
 ```php
 // Include the Composer autoloader
@@ -43,12 +43,33 @@ $repositories = $client->graph()->execute(<<<GQL
 >>>);
 ```
 
-**Authentication**
+#### Authentication
+
+The Worksome SDK supports authenticating through an API token.
 
 ```php
 $client = new \Worksome\Sdk\Client();
 $client->authenticate($apiToken);
 ```
+
+#### Using a different HTTP client
+
+Thanks to [HTTPlug](https://httplug.io), we support the use of many HTTP clients. For example, to use the Symfony HTTP
+Client, first install the client and PSR-7 implementation.
+
+```shell
+composer require worksome/sdk symfony/http-client nyholm/psr7
+```
+
+Next, set up the Worksome client with this HTTP client:
+
+```php
+$client = \Worksome\SDK\Client::createWithHttpClient(
+    new \Symfony\Component\HttpClient\HttplugClient()
+);
+```
+
+Alternatively, you can inject an HTTP client through the `Client` constructor.
 
 ## Change log
 
@@ -70,14 +91,23 @@ composer test
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/worksome/sdk.svg?style=flat-square
+
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+
 [ico-github-actions]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Tests.svg?style=flat-square
+
 [ico-static-analysis]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Static%20Analysis?label=static%20analysis&style=flat-square
+
 [ico-downloads]: https://img.shields.io/packagist/dt/worksome/sdk.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/worksome/sdk
+
 [link-github-actions]: https://github.com/worksome/sdk-php/actions
+
 [link-static-analysis]: https://github.com/worksome/sdk-php/actions?query=workflow%3AStatic%20Analysis
+
 [link-downloads]: https://packagist.org/packages/worksome/sdk
+
 [link-author]: https://github.com/owenvoke
+
 [link-contributors]: ../../contributors
