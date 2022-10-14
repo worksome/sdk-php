@@ -81,6 +81,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 composer test
 ```
 
+To update the test snapshots, set the `WORKSOME_LOCAL_API_URL` and `WORKSOME_LOCAL_API_TOKEN` environment variables, and
+then run `composer update:snapshots`.
+
 ## Credits
 
 - [Owen Voke][link-author]

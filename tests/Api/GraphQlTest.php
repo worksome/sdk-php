@@ -15,26 +15,12 @@ query {
   }
 }
 GQL;
-
-    $response = [
-        'data' => [
-            'profile' => [
-                'id' => 'VXNlcjox',
-                'email' => 'user@worksome.test'
-            ]
-        ]
-    ];
-
-    $api = $this->getApiMock();
-
-    $api->expects($this->once())
-        ->method('post')
-        ->with('/graphql', [
-            'query' => $query,
-            'variables' => [],
-        ])
-        ->willReturn($response);
-
     /** @var GraphQL $api */
-    expect($api->execute($query))->toBe($response);
+    $api = $this->getApi();
+
+    expect($api->execute($query))
+        ->data->toBeArray()
+        ->data->profile->toBeArray()
+        ->data->profile->id->toBe('VXNlcjox')
+        ->data->profile->email->toBe('admin@worksome.test');
 });

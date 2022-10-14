@@ -2,30 +2,44 @@
 
 namespace Worksome\Sdk\Tests;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use Psr\Http\Client\ClientInterface;
+use Http\Client\Common\Plugin\AddHostPlugin;
+use Http\Client\Plugin\Vcr\NamingStrategy\PathNamingStrategy;
+use Http\Client\Plugin\Vcr\Recorder\FilesystemRecorder;
+use Http\Client\Plugin\Vcr\RecordPlugin;
+use Http\Client\Plugin\Vcr\ReplayPlugin;
+use Http\Discovery\Psr17FactoryDiscovery;
+use Worksome\Sdk\Api\AbstractApi;
 use Worksome\Sdk\Client;
+use Worksome\Sdk\HttpClient\Builder;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    /** @var class-string */
+    /** @var class-string<AbstractApi> */
     protected string $apiClass;
 
-    protected function getApiMock(): MockObject
+    protected function getApi(): AbstractApi
     {
-        $httpClient = $this->getMockBuilder(ClientInterface::class)
-            ->onlyMethods(['sendRequest'])
-            ->getMock();
+        $namingStrategy = new PathNamingStrategy();
+        $recorder = new FilesystemRecorder(__DIR__.'/__SNAPSHOTS__');
 
-        $httpClient
-            ->expects($this->any())
-            ->method('sendRequest');
+        $httpBuilder = new Builder();
+        $httpBuilder->addPlugin(
+            in_array('--update-snapshots', $_SERVER['argv']) || getenv('UPDATE_SNAPSHOTS') === 'true' ?
+                new RecordPlugin($namingStrategy, $recorder) :
+                new ReplayPlugin($namingStrategy, $recorder)
+        );
 
-        $client = Client::createWithHttpClient($httpClient);
+        $client = new Client($httpBuilder);
 
-        return $this->getMockBuilder($this->apiClass)
-            ->onlyMethods(['get', 'post', 'postRaw', 'patch', 'delete', 'put', 'head'])
-            ->setConstructorArgs([$client])
-            ->getMock();
+        $httpBuilder->removePlugin(AddHostPlugin::class);
+        $httpBuilder->addPlugin(
+            new AddHostPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri(
+                (string) (getenv('WORKSOME_LOCAL_API_URL') ?: 'http://localhost:3000')
+            ))
+        );
+
+        $client->authenticate((string) getenv('WORKSOME_LOCAL_API_TOKEN'));
+
+        return new ($this->apiClass)($client);
     }
 }

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 69
+ETag: W/"45-ugKVV8pFBJmQZ4qi+q7Bq0TmxS0"
+Date: Fri, 14 Oct 2022 10:06:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"profile":{"id":"VXNlcjox","email":"admin@worksome.test"}}}
