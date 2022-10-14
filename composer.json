@@ -20,6 +20,7 @@
         "pestphp/pest": "^1.22.1",
         "pestphp/pest-plugin-parallel": "^1.2",
         "php-http/mock-client": "^1.5",
+        "php-http/vcr-plugin": "^1.2",
         "phpstan/phpstan": "^1.8.6",
         "symfony/var-dumper": "^6.0",
         "worksome/coding-style": "^2.0"
@@ -45,7 +46,8 @@
             "@test:style",
             "@test:types",
             "@test:unit"
-        ]
+        ],
+        "update:snapshots": "pest -d --update-snapshots"
     },
     "config": {
         "sort-packages": true,
