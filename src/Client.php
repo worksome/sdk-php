@@ -12,6 +12,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Worksome\Sdk\Api\AbstractApi;
 use Worksome\Sdk\Api\GraphQL;
+use Worksome\Sdk\Api\Viewer;
 use Worksome\Sdk\Enums\AuthMethod;
 use Worksome\Sdk\Exception\BadMethodCallException;
 use Worksome\Sdk\Exception\InvalidArgumentException;
@@ -21,6 +22,7 @@ use Worksome\Sdk\HttpClient\Plugin\Authentication;
 /**
  * @method GraphQL graph()
  * @method GraphQL graphql()
+ * @method Viewer viewer()
  */
 final class Client
 {
@@ -54,6 +56,7 @@ final class Client
     {
         return match ($name) {
             'graph', 'graphql' => new GraphQL($this),
+            'viewer' => new Viewer($this),
             default => throw new InvalidArgumentException(
                 sprintf('Undefined api instance called: "%s"', $name)
             ),
