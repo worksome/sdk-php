@@ -94,23 +94,14 @@ then run `composer update:snapshots`.
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/worksome/sdk.svg?style=flat-square
-
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-
 [ico-github-actions]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Tests.svg?style=flat-square
-
 [ico-static-analysis]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Static%20Analysis?label=static%20analysis&style=flat-square
-
 [ico-downloads]: https://img.shields.io/packagist/dt/worksome/sdk.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/worksome/sdk
-
 [link-github-actions]: https://github.com/worksome/sdk-php/actions
-
 [link-static-analysis]: https://github.com/worksome/sdk-php/actions?query=workflow%3AStatic%20Analysis
-
 [link-downloads]: https://packagist.org/packages/worksome/sdk
-
 [link-author]: https://github.com/owenvoke
-
 [link-contributors]: ../../contributors
