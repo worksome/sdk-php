@@ -22,7 +22,7 @@ use Worksome\Sdk\HttpClient\Plugin\Authentication;
 /**
  * @method GraphQL graph()
  * @method GraphQL graphql()
- * @method Viewer viewer()
+ * @method Viewer  viewer()
  */
 final class Client
 {

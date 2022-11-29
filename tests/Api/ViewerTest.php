@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Worksome\Sdk\Api\GraphQL;
 use Worksome\Sdk\Api\Viewer;
 
 beforeEach(fn () => $this->apiClass = Viewer::class);

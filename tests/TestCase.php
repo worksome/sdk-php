@@ -20,7 +20,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     protected function getApi(): AbstractApi
     {
         $namingStrategy = new PathNamingStrategy();
-        $recorder = new FilesystemRecorder(__DIR__.'/__SNAPSHOTS__');
+        $recorder = new FilesystemRecorder(__DIR__ . '/__SNAPSHOTS__');
 
         $httpBuilder = new Builder();
         $httpBuilder->addPlugin(
