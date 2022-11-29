@@ -10,9 +10,12 @@ final class ResponseMediator
     public static function getContent(ResponseInterface $response): array|string
     {
         $body = $response->getBody()->__toString();
+
         if (str_starts_with($response->getHeaderLine('Content-Type'), 'application/json')) {
+            /** @var array<string|int, mixed> $content */
             $content = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
-            if (JSON_ERROR_NONE === json_last_error()) {
+
+            if (json_last_error() === JSON_ERROR_NONE) {
                 return $content;
             }
         }
