@@ -41,4 +41,43 @@ class Viewer extends AbstractApi
 
         return $response['data']['accounts'] ?? throw new InvalidResponseException($response);
     }
+
+    /** @return array{id: string, email: string} */
+    public function changeEmail(string $email): array
+    {
+        /** @var array{data?: array{changeEmail: array{id: string, email: string}}} $response */
+        $response = (new GraphQL($this->getClient()))->execute(
+            <<<'GQL'
+            mutation changeEmail($email: String!) {
+                changeEmail(input: {email: $email}) {
+                    id
+                    email
+                }
+            }
+            GQL,
+            [
+                'email' => $email,
+            ]
+        );
+
+        return $response['data']['changeEmail'] ?? throw new InvalidResponseException($response);
+    }
+
+    /** @return array{id: string, email: string} */
+    public function sendVerificationEmail(): array
+    {
+        /** @var array{data?: array{sendVerificationEmail: array{id: string, email: string}}} $response */
+        $response = (new GraphQL($this->getClient()))->execute(
+            <<<'GQL'
+            mutation sendVerificationEmail {
+                sendVerificationEmail {
+                    id
+                    email
+                }
+            }
+            GQL
+        );
+
+        return $response['data']['sendVerificationEmail'] ?? throw new InvalidResponseException($response);
+    }
 }
