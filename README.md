@@ -95,8 +95,8 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/worksome/sdk.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-github-actions]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Tests.svg?style=flat-square
-[ico-static-analysis]: https://img.shields.io/github/workflow/status/worksome/sdk-php/Static%20Analysis?label=static%20analysis&style=flat-square
+[ico-github-actions]: https://img.shields.io/github/actions/workflow/status/worksome/sdk-php/tests.yml?branch=main&label=tests&style=flat-square
+[ico-static-analysis]: https://img.shields.io/github/actions/workflow/status/worksome/sdk-php/static.yml?branch=main&label=static%20analysis&style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/worksome/sdk.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/worksome/sdk
