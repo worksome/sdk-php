@@ -4,7 +4,7 @@
     "description": "An object-oriented PHP wrapper for the Worksome API",
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "php-http/client-common": "^2.5",
         "php-http/discovery": "^1.14.3",
         "php-http/httplug": "^2.3",
