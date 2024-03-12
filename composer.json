@@ -11,18 +11,18 @@
         "php-http/multipart-stream-builder": "^1.2",
         "psr/http-client-implementation": "^1.0",
         "psr/http-factory-implementation": "^1.0",
-        "psr/http-message": "^1.1||^2.0"
+        "psr/http-message": "^1.1 || ^2.0"
     },
     "require-dev": {
-        "guzzlehttp/guzzle": "^7.5",
-        "guzzlehttp/psr7": "^2.4.1",
+        "guzzlehttp/guzzle": "^7.8",
+        "guzzlehttp/psr7": "^2.6",
         "http-interop/http-factory-guzzle": "^1.2",
-        "pestphp/pest": "^2.0",
-        "php-http/mock-client": "^1.5",
+        "pestphp/pest": "^2.34",
+        "php-http/mock-client": "^1.6",
         "php-http/vcr-plugin": "^1.2",
         "phpstan/phpstan": "^1.8.6",
-        "symfony/var-dumper": "^6.0",
-        "worksome/coding-style": "^2.5"
+        "symfony/var-dumper": "^7.0",
+        "worksome/coding-style": "^2.10"
     },
     "autoload": {
         "psr-4": {
