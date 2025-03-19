@@ -73,7 +73,7 @@ Alternatively, you can inject an HTTP client through the `Client` constructor.
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [GitHub Releases](https://github.com/worksome/sdk-php/releases) for more information on what has changed recently.
 
 ## Testing
 

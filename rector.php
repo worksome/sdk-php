@@ -12,12 +12,4 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ]);
-
-    // Define extra rule sets to be applied
-    $rectorConfig->sets([
-        // SetList::DEAD_CODE,
-    ]);
-
-    // Register extra a single rules
-    // $rectorConfig->rule(ClassOnObjectRector::class);
 };

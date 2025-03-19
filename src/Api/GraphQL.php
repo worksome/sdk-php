@@ -17,7 +17,7 @@ class GraphQL extends AbstractApi
     {
         return $this->post('/graphql', [
             'query' => $query,
-            'variables' => $variables
+            'variables' => $variables,
         ]);
     }
 

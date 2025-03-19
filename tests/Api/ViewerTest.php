@@ -20,8 +20,8 @@ it('can query the accounts for a viewer', function () {
     expect($api->accounts())->toBe([
         [
             'id' => 'Q29tcGFueTox',
-            'name' => 'Test Company'
-        ]
+            'name' => 'Test Company',
+        ],
     ]);
 });
 
@@ -31,7 +31,7 @@ it('can change email for the viewer', function () {
 
     expect($api->changeEmail('test@test.com'))->toBe([
         'id' => 'VXNlcjox',
-        'email' => 'test@test.com'
+        'email' => 'test@test.com',
     ]);
 });
 
@@ -41,6 +41,6 @@ it('can send a verification email for the viewer', function () {
 
     expect($api->sendVerificationEmail())->toBe([
         'id' => 'VXNlcjox',
-        'email' => 'test@test.com'
+        'email' => 'test@test.com',
     ]);
 });
