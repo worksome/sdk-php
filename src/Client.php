@@ -28,7 +28,7 @@ final class Client
 {
     private Builder $httpClientBuilder;
 
-    public function __construct(Builder $httpClientBuilder = null)
+    public function __construct(Builder|null $httpClientBuilder = null)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();
 
