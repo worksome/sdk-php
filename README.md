@@ -52,6 +52,14 @@ $client = new \Worksome\Sdk\Client();
 $client->authenticate($apiToken);
 ```
 
+#### Using a different base URI
+
+The Worksome SDK defaults to using the `https://api.worksome.com` URI, however if a custom URI is required, this can be passed to the constructor:
+
+```php
+$client = new \Worksome\Sdk\Client(baseUri: 'https://api.local');
+```
+
 #### Using a different HTTP client
 
 Thanks to [HTTPlug](https://httplug.io), we support the use of many HTTP clients. For example, to use the Symfony HTTP

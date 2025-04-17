@@ -26,15 +26,19 @@ use Worksome\Sdk\HttpClient\Plugin\Authentication;
  */
 final class Client
 {
+    public const string BASE_URI = 'https://api.worksome.com';
+
     private Builder $httpClientBuilder;
 
-    public function __construct(Builder|null $httpClientBuilder = null)
+    public function __construct(Builder|null $httpClientBuilder = null, string $baseUri = self::BASE_URI)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();
 
         $builder->addPlugin(new RedirectPlugin());
         $builder->addPlugin(
-            new AddHostPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri('https://api.worksome.com'))
+            new AddHostPlugin(
+                Psr17FactoryDiscovery::findUriFactory()->createUri($baseUri)
+            )
         );
         $builder->addPlugin(new HeaderDefaultsPlugin([
             'User-Agent' => 'worksome-sdk (https://github.com/worksome/sdk-php)',
