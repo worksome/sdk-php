@@ -11,18 +11,14 @@ An object-oriented PHP wrapper for the Worksome API
 ## Requirements
 
 - PHP >= 8.2
-- A [PSR-17 implementation](https://packagist.org/providers/psr/http-factory-implementation)
-- A [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation)
 
 ## Install
 
 Via Composer
 
 ```shell
-composer require worksome/sdk guzzlehttp/guzzle:^7.5 http-interop/http-factory-guzzle:^1.2
+composer require worksome/sdk
 ```
-
-We are decoupled from any HTTP messaging client with help by [HTTPlug](https://httplug.io).
 
 ## Usage
 
@@ -32,8 +28,8 @@ We are decoupled from any HTTP messaging client with help by [HTTPlug](https://h
 // Include the Composer autoloader
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new \Worksome\Sdk\Client();
-$repositories = $client->graph()->execute(<<<GQL
+$client = new \Worksome\Sdk\Worksome();
+$profile = $client->graph()->graphql(<<<GQL
     query {
         profile {
             name
@@ -48,8 +44,7 @@ $repositories = $client->graph()->execute(<<<GQL
 The Worksome SDK supports authenticating through an API token.
 
 ```php
-$client = new \Worksome\Sdk\Client();
-$client->authenticate($apiToken);
+$client = new \Worksome\Sdk\Worksome($apiToken);
 ```
 
 #### Using a different base URI
@@ -57,27 +52,8 @@ $client->authenticate($apiToken);
 The Worksome SDK defaults to using the `https://api.worksome.com` URI, however if a custom URI is required, this can be passed to the constructor:
 
 ```php
-$client = new \Worksome\Sdk\Client(baseUri: 'https://api.local');
+$client = new \Worksome\Sdk\Worksome(baseUri: 'https://api.local');
 ```
-
-#### Using a different HTTP client
-
-Thanks to [HTTPlug](https://httplug.io), we support the use of many HTTP clients. For example, to use the Symfony HTTP
-Client, first install the client and PSR-7 implementation.
-
-```shell
-composer require worksome/sdk symfony/http-client nyholm/psr7
-```
-
-Next, set up the Worksome client with this HTTP client:
-
-```php
-$client = \Worksome\SDK\Client::createWithHttpClient(
-    new \Symfony\Component\HttpClient\HttplugClient()
-);
-```
-
-Alternatively, you can inject an HTTP client through the `Client` constructor.
 
 ## Change log
 
