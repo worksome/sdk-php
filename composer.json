@@ -4,7 +4,7 @@
     "description": "An object-oriented PHP wrapper for the Worksome API",
     "license": "MIT",
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "php-http/client-common": "^2.7",
         "php-http/discovery": "^1.20",
         "php-http/httplug": "^2.4",
@@ -22,7 +22,7 @@
         "php-http/vcr-plugin": "^1.2",
         "phpstan/phpstan": "^2.1",
         "symfony/var-dumper": "^7.2",
-        "worksome/coding-style": "^3.2"
+        "worksome/coding-style": "^3.3"
     },
     "autoload": {
         "psr-4": {
