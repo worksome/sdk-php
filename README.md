@@ -10,7 +10,7 @@ An object-oriented PHP wrapper for the Worksome API
 
 ## Requirements
 
-- PHP >= 8.2
+- PHP >= 8.4
 - A [PSR-17 implementation](https://packagist.org/providers/psr/http-factory-implementation)
 - A [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation)
 
