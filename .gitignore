@@ -5,6 +5,7 @@
 /composer.lock
 /phpunit.xml
 /phpstan.neon
+.env
 .php_cs
 .php_cs.cache
 .phpunit.cache

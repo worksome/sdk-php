@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
-use Worksome\Sdk\Tests\TestCase;
+use Saloon\Http\Faking\MockClient;
+use Worksome\Sdk\Worksome;
 
-uses(TestCase::class)->in('Api');
+function worksomeMock(): Worksome
+{
+    MockClient::destroyGlobal();
+
+    $token = $_SERVER['WORKSOME_API_TOKEN'] ?? 'fake-token';
+    $baseUri = $_SERVER['WORKSOME_BASE_URI'] ?? 'https://api.worksome.com';
+
+    return new Worksome($token, $baseUri);
+}

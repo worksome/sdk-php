@@ -1,0 +1,22 @@
+{
+    "statusCode": 400,
+    "headers": {
+        "Date": "Mon, 11 Aug 2025 12:53:23 GMT",
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "150",
+        "Connection": "keep-alive",
+        "CF-RAY": "96d7e024ce23be35-CPH",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "*",
+        "Cache-Control": "no-store",
+        "etag": "W\/\"96-jdC342QGOtYpiulyP9jjHSGcDlA\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "DYNAMIC",
+        "Report-To": "{\"endpoints\":[{\"url\":\"https:\\\/\\\/a.nel.cloudflare.com\\\/report\\\/v4?s=P2xHPfufJ4776PtHpfnr71OK9nViVXUKXmarhUux%2B5hndgNU%2Bo22PAnupC3zpeuTe28tAkKSSCEsm8iOMBnSkVWF7vsTSDMpClZ9vOiCAGQ6%2F4TEOe5In1GFCiHKBF9HrbA%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "Server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=TCP&rtt=4853&min_rtt=4684&rtt_var=1877&sent=5&recv=7&lost=0&retrans=0&sent_bytes=3531&recv_bytes=2951&delivery_rate=927412&cwnd=252&unsent_bytes=0&cid=a0e4a49c3d189dc7&ts=144&x=0\""
+    },
+    "data": "{\"errors\":[{\"message\":\"Syntax Error: Expected Name, found \\\"}\\\".\",\"locations\":[{\"line\":1,\"column\":8}],\"extensions\":{\"code\":\"GRAPHQL_PARSE_FAILED\"}}]}\n",
+    "context": []
+}

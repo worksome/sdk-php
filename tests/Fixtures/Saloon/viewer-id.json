@@ -1,0 +1,16 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Server": "nginx\/1.29.0",
+        "Date": "Mon, 11 Aug 2025 12:17:06 GMT",
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "38",
+        "Connection": "keep-alive",
+        "X-Powered-By": "Express",
+        "Access-Control-Allow-Origin": "*",
+        "cache-control": "no-store",
+        "ETag": "W\/\"26-8oL\/XpG\/QVlBX8URydjfpAtsOMU\""
+    },
+    "data": "{\"data\":{\"viewer\":{\"id\":\"VXNlcjox\"}}}\n",
+    "context": []
+}
