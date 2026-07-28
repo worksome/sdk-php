@@ -17,12 +17,12 @@
         "guzzlehttp/guzzle": "^7.9",
         "guzzlehttp/psr7": "^2.7",
         "http-interop/http-factory-guzzle": "^1.2",
-        "pestphp/pest": "^4.1",
+        "pestphp/pest": "^4.7",
         "php-http/mock-client": "^1.6",
         "php-http/vcr-plugin": "^1.2",
-        "phpstan/phpstan": "^2.1",
-        "symfony/var-dumper": "^7.2",
-        "worksome/coding-style": "^3.3"
+        "phpstan/phpstan": "^2.2",
+        "symfony/var-dumper": "^7.4|^8.0",
+        "worksome/coding-style": "^4.0"
     },
     "autoload": {
         "psr-4": {
