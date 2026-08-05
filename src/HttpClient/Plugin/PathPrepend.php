@@ -11,11 +11,8 @@ final class PathPrepend implements Plugin
 {
     use VersionBridgePlugin;
 
-    private string $path;
-
-    public function __construct(string $path)
+    public function __construct(private string $path)
     {
-        $this->path = $path;
     }
 
     public function doHandleRequest(RequestInterface $request, callable $next, callable $first): Promise

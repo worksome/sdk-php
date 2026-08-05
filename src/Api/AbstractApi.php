@@ -50,8 +50,6 @@ abstract class AbstractApi
      * @param string               $path           Request path.
      * @param array<string, mixed> $parameters     HEAD parameters.
      * @param array<string, mixed> $requestHeaders Request headers.
-     *
-     * @return ResponseInterface
      */
     protected function head(string $path, array $parameters = [], array $requestHeaders = []): ResponseInterface
     {
@@ -163,8 +161,6 @@ abstract class AbstractApi
      * Create a JSON encoded version of an array of parameters.
      *
      * @param array<string, mixed> $parameters Request parameters
-     *
-     * @return string|null
      */
     protected function createJsonBody(array $parameters): string|null
     {
