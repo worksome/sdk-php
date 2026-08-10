@@ -16,12 +16,12 @@ use Psr\Http\Message\StreamFactoryInterface;
 final class Builder
 {
     /** The object that sends HTTP messages. */
-    private ClientInterface $httpClient;
+    private readonly ClientInterface $httpClient;
 
     /** An HTTP client with all our plugins. */
     private HttpMethodsClientInterface $pluginClient;
 
-    private RequestFactoryInterface $requestFactory;
+    private readonly RequestFactoryInterface $requestFactory;
 
     public StreamFactoryInterface $streamFactory;
 

@@ -28,7 +28,7 @@ final class Client
 {
     public const string BASE_URI = 'https://api.worksome.com';
 
-    private Builder $httpClientBuilder;
+    private readonly Builder $httpClientBuilder;
 
     public function __construct(Builder|null $httpClientBuilder = null, string $baseUri = self::BASE_URI)
     {
