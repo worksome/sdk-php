@@ -22,7 +22,7 @@
         "php-http/vcr-plugin": "^1.2",
         "phpstan/phpstan": "^2.2",
         "symfony/var-dumper": "^7.4|^8.0",
-        "worksome/coding-style": "^5.1"
+        "worksome/coding-style": "^6.0.1"
     },
     "autoload": {
         "psr-4": {
@@ -54,7 +54,8 @@
             "pestphp/pest-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "worksome/coding-style": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         }
     },
     "minimum-stability": "dev",
