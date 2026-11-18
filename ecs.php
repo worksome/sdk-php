@@ -10,7 +10,4 @@ return WorksomeEcsConfig::configure()
         __DIR__ . '/rector.php',
         __DIR__ . '/src',
         __DIR__ . '/tests',
-    ])
-    ->withSkip([
-        Worksome\CodingStyle\Sniffs\Classes\ExceptionSuffixSniff::class,
     ]);
